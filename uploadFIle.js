@@ -2,7 +2,7 @@ const multer = require("multer")
 
 exports.storage = multer.diskStorage({
     destination : (req,file,cb) => {
-        cb(null,'Client/public/images')
+        cb(null,'/public/images')
     },
     filename : (req,file,cb) => {
         cb(null,`${req.user._id}`+file.originalname);

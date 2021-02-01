@@ -10,7 +10,7 @@ const user = require("../models/user");
 
 const storage = multer.diskStorage({
     destination : (req,file,cb) => {
-        cb(null,'Client/public/images')
+        cb(null,'/public/images')
     },
     filename : (req,file,cb) => {
         cb(null,`${req.user._id}post`+file.originalname);
@@ -155,7 +155,7 @@ postRouter.route("/:postId")
                 return next(err);
             }
             var path = post.image;
-            fs.unlink('Client/public/images/'+path,(err) => {
+            fs.unlink('/public/images/'+path,(err) => {
                 if(err){
                     console.log(err)
                     return;
