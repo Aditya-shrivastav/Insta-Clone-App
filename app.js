@@ -41,7 +41,7 @@ app.use(passport.initialize());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'Client/build')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use("/users", userRouter);
 
@@ -51,7 +51,7 @@ app.use("/profile",profileRouter);
 app.use(passport.session());
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname + '/Client/build/index.html'))
+  res.sendFile(path.join(__dirname + '/public/index.html'))
 })
 
 
