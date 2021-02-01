@@ -35,7 +35,14 @@ var profileRouter = require('./routes/profileRouter');
 
 var app = express();
 
+app.use(passport.initialize());
 // view engine setup
+
+app.use('/', indexRouter);
+app.use("/users", userRouter);
+
+app.use("/posts", postRouter);
+app.use("/profile",profileRouter);
 
 
 app.use(express.json());
@@ -44,15 +51,10 @@ app.use(express.static(path.join(__dirname, 'Client/build')));
 app.get('*',(req,res)=>{
   res.sendFile(path.join(__dirname+'/Client/build/index.html'))
 })
-app.use(passport.initialize());
+
 app.use(passport.session());
 
 
-app.use('/', indexRouter);
-app.use("/users", userRouter);
-
-app.use("/posts", postRouter);
-app.use("/profile",profileRouter);
 
 app.listen(PORT,()=>{
   console.log(`Server is up and running at http://${hostname}:${PORT}`)

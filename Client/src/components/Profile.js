@@ -69,7 +69,7 @@ class Profile extends React.Component{
             <div className="container Pagecontainer box">
                 <div className="row profileBio pb-5" style={{borderBottom:"1px solid gray"}}>
                     <div className="col-12 col-md-3 img">
-                        <img src={`/images/${this.props.user.photo}`} alt={this.props.user.photo}/>
+                        <img src={`public/images/${this.props.user.photo}`} alt={this.props.user.photo}/>
                     </div>
                     <div className="col-12 col-md-8 mt-3" style={{fontFamily:"Zilla Slab, serif", fontSize:"20px"}}>
                         <h2 className="mb-2">{this.props.user.username}</h2>

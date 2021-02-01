@@ -145,7 +145,7 @@ profileRouter.route("/changeDp")
     .then((user) => {
         if(req.file != null){
             console.log(req.file)
-            fs.unlink('public/images/'+user.photo,(err) => {
+            fs.unlink('Client/public/images/'+user.photo,(err) => {
                 if(err){
                     res.statusCode = 500;
                     res.setHeader("Content-Type","application/json");
