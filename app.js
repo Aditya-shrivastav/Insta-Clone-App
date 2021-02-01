@@ -50,6 +50,9 @@ app.use("/profile",profileRouter);
 
 app.use(passport.session());
 
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/Client/build/index.html'))
+})
 
 
 app.listen(PORT,()=>{
