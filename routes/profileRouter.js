@@ -30,7 +30,7 @@ profileRouter.route('/')
 })
 
 profileRouter.route('/users')
-.get(authenticate.verifyUser,(req,res,next) => {
+.get((req,res,next) => {
     User.find({})
     .then((users) => { 
         res.statusCode = 200;
