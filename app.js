@@ -5,7 +5,7 @@ const passport = require('passport')
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose = require('mongoose');
-const url = 'mongodb+srv://Addy:a1d4i8t5y6a1@cluster0.hqq2p.mongodb.net/data?retryWrites=true&w=majority';
+const url = // create your own mongo url ;
 
 const connectionParams={
   useNewUrlParser: true,
